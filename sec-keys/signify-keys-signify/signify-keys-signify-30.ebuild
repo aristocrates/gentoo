@@ -22,6 +22,10 @@ LICENSE="public-domain"
 SLOT="${PV}"
 KEYWORDS="~alpha amd64 arm arm64 hppa ~ia64 ~m68k ~mips ppc ppc64 ~riscv ~s390 sparc x86"
 
+DEPEND="
+	verify-sig? ( sec-keys/openpgp-keys-signify )
+"
+
 VERIFY_SIG_OPENPGP_KEY_PATH=${BROOT}/usr/share/openpgp-keys/signify.asc
 
 src_install() {
